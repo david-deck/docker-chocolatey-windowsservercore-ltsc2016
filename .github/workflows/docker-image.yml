@@ -10,9 +10,9 @@ jobs:
 
   build:
 
-    runs-on: windows-latest
+    runs-on: windows-2016
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --isolation hyperv --tag edgehog/windows/servercore/ltsc2016/chocolatey
+      run: docker build . --tag edgehog/windows/servercore/ltsc2016/chocolatey
