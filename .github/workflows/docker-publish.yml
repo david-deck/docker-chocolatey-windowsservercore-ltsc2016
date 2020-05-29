@@ -36,10 +36,5 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/david.deck/windows.servercore.ltsc2016-chocolatey
-          
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          echo IMAGE_ID=$IMAGE_ID
-          docker tag windows.servercore.ltsc2016-chocolatey $IMAGE_ID
-          docker push $IMAGE_ID
+          docker tag windows.servercore.ltsc2016-chocolatey docker.pkg.github.com/david-deck/windows.servercore.ltsc2016-chocolatey
+          docker push docker.pkg.github.com/david-deck/windows.servercore.ltsc2016-chocolatey
