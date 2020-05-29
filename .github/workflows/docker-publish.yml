@@ -28,8 +28,11 @@ jobs:
 
       - uses: actions/checkout@v2
 
+      - name: Debug
+        run: echo $IMAGE_NAME
+
       - name: Build image
-        run: docker build . --tag $IMAGE_NAME
+        run: docker build . --tag edgehog/windows/servercore/ltsc2016/chocolatey
 
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
