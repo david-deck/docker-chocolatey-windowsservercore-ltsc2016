@@ -36,13 +36,10 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/windows.servercore.ltsc2016-chocolatey
+          IMAGE_ID=docker.pkg.github.com/david.deck/windows.servercore.ltsc2016-chocolatey
           
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-          docker tag windows.servercore.ltsc2016-chocolatey $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+          docker tag windows.servercore.ltsc2016-chocolatey $IMAGE_ID
+          docker push $IMAGE_ID
