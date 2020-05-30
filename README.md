@@ -1,1 +1,2 @@
-# docker-windows-servercore-ltsc2016-chocolatey
+* Windows Server Core ltsc2016
+* Chocolatey 0.10.15
