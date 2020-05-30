@@ -9,3 +9,6 @@ RUN powershell -Command \
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; \
 	iex ( (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1') ); \
 	choco feature disable --name showDownloadProgress
+
+LABEL	maintainer="deck.david@gmail.com" \
+		chocolatey.version="0.10.15"
