@@ -36,5 +36,5 @@ jobs:
 
       - name: Push image
         run: |
-          docker tag image edgehog/windows.servercore.ltsc2016-chocolatey
-          docker push edgehog/windows.servercore.ltsc2016-chocolatey
+          docker tag image edgehog/chocolatey:latest-windowsservercore-ltsc2016
+          docker push edgehog/chocolatey:latest-windowsservercore-ltsc2016
